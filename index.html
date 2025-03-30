@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker & Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for price charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-coins"></i> Crypto Tracker & Analyzer</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search cryptocurrency...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <div class="market-overview">
+            <h2>Market Overview</h2>
+            <div class="market-stats">
+                <div class="stat-card">
+                    <h3>Global Market Cap</h3>
+                    <p id="globalMarketCap">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24h Volume</h3>
+                    <p id="total24hVolume">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>BTC Dominance</h3>
+                    <p id="btcDominance">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="top-coins">
+                <h2>Top Cryptocurrencies</h2>
+                <div class="coin-list" id="coinList">
+                    <!-- Coins will be added here dynamically -->
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2 id="selectedCoinName">Bitcoin Price Chart</h2>
+                    <div class="time-filters">
+                        <button class="time-filter active" data-days="1">24h</button>
+                        <button class="time-filter" data-days="7">7d</button>
+                        <button class="time-filter" data-days="30">30d</button>
+                        <button class="time-filter" data-days="365">1y</button>
+                    </div>
+                </div>
+                <canvas id="priceChart"></canvas>
+            </div>
+
+            <div class="coin-details" id="coinDetails">
+                <h2>Coin Details</h2>
+                <div class="details-content">
+                    <!-- Coin details will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-tracker">
+            <h2>Portfolio Tracker</h2>
+            <div class="portfolio-form">
+                <input type="text" id="coinInput" placeholder="Coin name">
+                <input type="number" id="quantityInput" placeholder="Quantity">
+                <button id="addToPortfolio">Add to Portfolio</button>
+            </div>
+            <div class="portfolio-list" id="portfolioList">
+                <!-- Portfolio items will be added here dynamically -->
+            </div>
+            <div class="portfolio-summary">
+                <h3>Total Value: <span id="portfolioValue">$0.00</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
